@@ -1,0 +1,58 @@
+{% extends 'body.html' %}
+{% load static %}
+{% block head %}
+    <script src="{% static 'js/hermite.js' %}"></script>
+{% endblock head %}
+{% block content %}
+    <div class="row h-50">
+        <div class="col-12 col-md-6 border d-flex align-items-center justify-content-center">
+            <div>
+                <div class="group-input">
+                    <label for="x_values">
+                        <label>VALORES DE X: </label>
+                        <input type="text" class="form-control" name="x_values" id="x_values">
+                    </label>
+                </div>
+                <div class="group-input">
+                    <label for="y_values">
+                        <label>VALORES DE Y: </label>
+                        <input type="text" class="form-control" name="y_values" id="y_values">
+                    </label>
+                    <input type="checkbox" name="is_function" id="is_function"> ¿Es función?
+                </div>
+                <div class="group-input">
+                    <label for="y_d_values">
+                        <label>VALORES DE Y': </label>
+                        <input type="text" class="form-control" name="y_d_values" id="y_d_values">
+                    </label>
+                </div>
+                <div class="group-input">
+                    <label for="point">
+                        <label>Punto a evaluar: </label>
+                        <input type="number" class="form-control" name="point" id="point">
+                    </label>
+                </div>
+                <input type="button" id="submit" value="GUARDAR RESULTADO" class="form-control mt-2 bg-primary">
+               
+            </div>
+        </div>
+        <div class="col-12 col-md-6 border d-flex align-items-center justify-content-center">
+            <div id="grafico">
+
+            </div>
+        </div>
+    </div>
+    <div class="row h-50">
+        <div class="col-12 col-md-6 border d-flex align-items-center justify-content-center">
+            Box 3
+        </div>
+        <div class="col-12 col-md-6 border d-flex align-items-center justify-content-center">
+            <div class="img">
+                <img id="image-hermite">
+            </div>
+        </div>
+    </div>
+    <div class="mt-1" id="result" >
+        <p id="polinomio" ></p>
+    </div>
+{% endblock content %}
